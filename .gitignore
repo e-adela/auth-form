@@ -1,4 +1,8 @@
 node_modules/
 .bit/
 dist/
+public
 .bitmap
+App.js
+index.js
+yarn.lock

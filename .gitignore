@@ -3,6 +3,6 @@ node_modules/
 dist/
 public/
 .bitmap
-App.js
-index.js
+src/App.js
+src/index.js
 yarn.lock

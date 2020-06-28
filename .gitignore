@@ -1,7 +1,7 @@
 node_modules/
 .bit/
 dist/
-public
+public/
 .bitmap
 App.js
 index.js

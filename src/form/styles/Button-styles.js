@@ -1,11 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import theme from './Theme';
+import theme from "./Theme";
 
-
-const Default = styled.button`
+export const Default = styled.button`
   border-radius: 20px;
   border: 1px solid ${(props) => theme.color[props.color] || theme.color.grey};
   background-color: ${(props) => theme.color[props.color] || theme.color.grey};
@@ -40,50 +37,20 @@ const Default = styled.button`
   }
 `;
 
-const Primary = styled(Default)`
+export const Primary = styled(Default)`
   border-color: ${theme.color.primary};
   background-color: ${theme.color.primary};
   color: ${theme.color.white};
 `;
 
-const Secondary = styled(Default)`
+export const Secondary = styled(Default)`
   border-color: ${theme.color.scondary};
   background-color: ${theme.color.secondary};
   color: ${theme.color.white};
 `;
 
-const Transparent = styled(Default)`
+export const Transparent = styled(Default)`
   background-color: transparent;
   border-color: ${theme.color.white};
   color: ${theme.color.white};
 `;
-
-const Button = ({ variant= 'default', ...props }) => {
-    const variants = {
-      primary: Primary,
-      secondary: Secondary,
-      transparent: Transparent,
-      default: Default,
-    };
-
-    return React.createElement(variants[variant], props);
-};
-
-Button.propTypes = {
-  variant: PropTypes.oneOf([
-    "primary",
-    "secondary",
-    "transparent",
-    "default",
-  ]),
-  marginBottom: PropTypes.string,
-  marginTop: PropTypes.string,
-  marginLeft: PropTypes.string,
-  marginRight: PropTypes.string,
-  color: PropTypes.string,
-  type: PropTypes.oneOf(["button", "submit"]),
-  onClick: PropTypes.func,
-  disabled: PropTypes.bool
-};
-
-export default Button;

@@ -1,8 +1,2 @@
 node_modules/
-.bit/
-dist/
-public/
-.bitmap
-src/App.js
-src/index.js
 yarn.lock

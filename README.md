@@ -8,10 +8,6 @@ a login/signup react component form, integrated with formik & yup for client-sid
 npm i auth-form-react
 ```
 
-## Demo
-
-https://emad-abdelmaksoud/portfolio/auth-form
-
 ## How to use
 
 ```javascript

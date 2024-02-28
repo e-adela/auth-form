@@ -1,12 +1,10 @@
 {
-  "name": "auth-form",
-  "version": "0.1.0",
+  "name": "auth-form-react",
+  "version": "1.0.1",
   "description": "a React auth-form component.",
   "author": "Emad Abdelmaksoud <e.abdellmaksoud@gmail.com>",
   "repository": "https://github.com/emadadel999/auth-form.git",
-  "publishConfig": {
-    "@emadadel999:registry": "https://npm.pkg.github.com"
-  },
+  "homepage": "https://github.com/emadadel999/auth-form#readme",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

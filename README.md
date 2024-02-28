@@ -5,18 +5,18 @@ a login/signup react component form, integrated with formik & yup for client-sid
 ## Setup
 
 ```
-npm i @bit/emadadel999.mycollection.form
+npm i auth-form-react
 ```
 
 ## Demo
 
-https://bit.dev/emadadel999/mycollection/form
+https://emad-abdelmaksoud/portfolio/auth-form
 
 ## How to use
 
 ```javascript
 import React from "react";
-import Form from "@bit/emadadel999.mycomponents.form";
+import Form from "auth-form-react";
 
 function App(props) {
   const onLogin = (values) => {

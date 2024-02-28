@@ -3,9 +3,11 @@ import AuthForm from "./form";
 function App() {
   const onLogin = (values) => {
     // dispatch form values to an API here
+    alert("Success!");
   };
   const onRegister = (values) => {
     // dispatch form values to an API here
+    alert("Success!");
   };
   return <AuthForm onSignIn={onLogin} onSignUp={onRegister} loading={false} />;
 }

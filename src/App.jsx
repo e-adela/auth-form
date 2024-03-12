@@ -1,4 +1,4 @@
-import AuthForm from "./form";
+import AuthForm from "./form/AuthForm";
 
 function App() {
   const onLogin = (values) => {

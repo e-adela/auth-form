@@ -1,11 +1,21 @@
 {
   "name": "auth-form-react",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a React auth-form component.",
   "author": "Emad Abdelmaksoud <e.abdellmaksoud@gmail.com>",
   "repository": "https://github.com/emadadel999/auth-form.git",
   "homepage": "https://github.com/emadadel999/auth-form#readme",
+  "main": "./dist/auth-form-react.js",
+  "module": "./dist/auth-form-react.umd.cjs",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./dist/auth-form-react.js"
+      },
+      "require": "./dist/auth-form-react.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -17,7 +27,6 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.4",
     "styled-components": "^6.1.8",
-    "sweetalert2": "^11.10.5",
     "axios": "^1.6.7",
     "formik": "^2.4.5",
     "yup": "^1.3.3"

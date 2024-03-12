@@ -1,6 +1,6 @@
 {
   "name": "auth-form-react",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "a React auth-form component.",
   "author": "Emad Abdelmaksoud <e.abdellmaksoud@gmail.com>",
   "repository": "https://github.com/emadadel999/auth-form.git",
@@ -23,12 +23,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "formik": "^2.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.4",
-    "styled-components": "^6.1.8",
-    "axios": "^1.6.7",
-    "formik": "^2.4.5",
     "yup": "^1.3.3"
   },
   "devDependencies": {
@@ -39,6 +37,8 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "sass": "^1.71.1",
+    "style-inject": "^0.3.0",
     "vite": "^5.1.4"
   }
 }

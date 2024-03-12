@@ -16,14 +16,13 @@ export default defineConfig({
         rollupOptions: {
             // make sure to externalize deps that shouldn't be bundled
             // into your library
-            external: ["react", "react-dom", "react-router-dom", "styled-components", "formik", "yup"],
+            external: ["react", "react-dom", "react-router-dom", "formik", "yup"],
             output: {
                 // Provide global variables to use in the UMD build
                 // for externalized deps
                 globals: {
                     react: "React",
                     "react-dom": "React-dom",
-                    "styled-components": "styled",
                     "formik": "formik",
                     "yup": "yup"
 

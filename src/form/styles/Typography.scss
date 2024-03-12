@@ -1,0 +1,30 @@
+.typography {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    margin: 0;
+    margin-bottom: 0.35em;
+    color: $color-dark;
+    font-weight: 400;
+
+    &.--body {
+        font-size: 1rem;
+        line-height: 1.5;
+        letter-spacing: 0.00938em;
+    }
+
+    &.--h4 {
+        font-size: 2.125rem;
+        line-height: 1.17;
+        letter-spacing: 0.00735em;
+        font-weight: 550;
+    }
+
+    &.--body2 {
+        font-size: 0.875rem;
+        line-height: 1.5;
+        letter-spacing: 0.01071em;
+    }
+
+    &.--white {
+        color: $color-white;
+    }
+}

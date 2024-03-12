@@ -1,0 +1,104 @@
+@keyframes hide-form {
+
+    0% {
+        opacity: 1;
+    }
+
+    33.33% {
+        opacity: 0.75;
+    }
+
+    66.66% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.form-container {
+    left: 0;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+    &.--signup {
+        transform: translateX(100%);
+        animation: none;
+        opacity: 1;
+
+        &.--signup-inactive {
+            animation: 0.2s ease-in hide-form;
+            opacity: 0;
+        }
+
+    }
+
+    &.--signin {
+        animation: none;
+        opacity: 1;
+
+        &.--signin-inactive {
+            animation: 0.2s ease-in hide-form;
+            opacity: 0;
+        }
+
+    }
+}
+
+.form {
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-container {
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 15px;
+    -webkit-box-sizing: border-box; // Safari/Chrome, other WebKit
+    -moz-box-sizing: border-box; // Firefox, other Gecko
+    box-sizing: border-box; // Opera/IE 8+
+    margin: 8px 0;
+    background-color: $color-grey;
+    border: 1px solid $color-grey;
+    border-radius: 4px;
+    outline: none;
+    font-size: "1rem";
+    transition: border 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+    &:invalid {
+        border-color: red;
+        background: #ffd1d1;
+    }
+
+    &:focus {
+        border: 2px solid $color-primary;
+        transition: border 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+}
+
+.form-error {
+    color: red;
+    font-size: 0.775rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 550;
+}

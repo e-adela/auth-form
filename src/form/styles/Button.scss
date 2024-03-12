@@ -1,0 +1,52 @@
+.button {
+    border-radius: 20px;
+    border: 1px solid $color-grey;
+    background-color: $color-grey;
+    margin: 0;
+    margin-bottom: 0.35em;
+    color: $color-dark;
+    font-size: 0.875rem;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    cursor: pointer;
+    margin-top: 1.17rem;
+
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:disabled,
+    &:hover:disabled,
+    &:active:disabled {
+        background: #ccc;
+        color: #979797;
+        border-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    &.--primary {
+        border-color: $color-primary;
+        background-color: $color-primary;
+        color: $color-white;
+    }
+
+    &.--secondary {
+        border-color: $color-secondary;
+        background-color: $color-secondary;
+        color: $color-white;
+    }
+
+    &.--transparent {
+        background-color: transparent;
+        border-color: $color-white;
+        color: $color-white;
+    }
+}

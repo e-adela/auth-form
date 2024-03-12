@@ -1,76 +1,81 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import * as yup from "yup";
-
-import { ServerFormError } from "../styles/SignForm-styles";
-
-import Typography from "../styles/Typography";
 import FormInput from "./FormInput";
-import Button from "./Button";
 
-function SignUpForm({ className, onSignUp, serverError, loading }) {
+function SignUpForm({
+  className,
+  onSignUp,
+  serverError,
+  loading,
+  validationSchema,
+  initalValues,
+}) {
   return (
     <Formik
-      initialValues={{
-        username: "",
-        email: "",
-        password: "",
-      }}
-      validationSchema={yup.object({
-        username: yup
-          .string()
-          .max(15, "must be 15 characters or less")
-          .required("required"),
-        email: yup.string().email("invalid email address").required("required"),
-        password: yup
-          .string()
-          .max(6, "must be 6 characters or less")
-          .required("required"),
-      })}
+      initialValues={
+        initalValues || {
+          username: "",
+          email: "",
+          password: "",
+        }
+      }
+      validationSchema={
+        validationSchema ||
+        yup.object({
+          username: yup
+            .string()
+            .max(15, "must be 15 characters or less")
+            .required("required"),
+          email: yup.string().email("invalid email address").required("required"),
+          password: yup
+            .string()
+            .max(6, "must be 6 characters or less")
+            .required("required"),
+        })
+      }
       onSubmit={(values) => {
         onSignUp(values);
-      }}
-    >
+      }}>
       {(formik) => (
         <Form className={className} onSubmit={formik.handleSubmit}>
-          <Typography fontWeight={550} variant="h4">
-            Create Account
-          </Typography>
+          <p className='typography --h4'>Create Account</p>
 
           <FormInput
-            id="username"
-            name="username"
-            type="text"
-            placeholder="Username"
+            id='username'
+            name='username'
+            type='text'
+            placeholder='Username'
+            autoComplete='username'
           />
-          <FormInput id="email" name="email" type="email" placeholder="Email" />
           <FormInput
-            id="password"
-            name="password"
-            type="password"
-            placeholder="Password"
+            id='email'
+            name='email'
+            type='email'
+            placeholder='Email'
+            autoComplete='username'
+          />
+          <FormInput
+            id='password'
+            name='password'
+            type='password'
+            placeholder='Password'
+            autoComplete='new-password'
           />
 
-          {serverError && <ServerFormError>{serverError}</ServerFormError>}
+          {serverError && <div className='server-form-error'>{serverError}</div>}
 
           {!loading ? (
-            <Button
-              variant="secondary"
-              type="submit"
-              marginTop="1.17rem"
-              disabled={!formik.isValid}
-            >
+            <button
+              className='button --secondary'
+              type='submit'
+              disabled={!formik.isValid}>
               Sign up
-            </Button>
+            </button>
           ) : (
-            <Button
-              variant="secondary"
-              type="submit"
-              marginTop="1.17rem"
-              disabled={true}
-            >
+            <button className='button --secondary' type='submit' disabled={true}>
               Loading...
-            </Button>
+            </button>
           )}
         </Form>
       )}

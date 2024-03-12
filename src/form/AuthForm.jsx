@@ -1,86 +1,75 @@
 import React, { useState } from "react";
+import SignInForm from "./components/SignInForm";
+import SignUpForm from "./components/SignUpForm";
 
-import Typography from "./styles/Typography";
-import Button from "./components/Button";
-import {
-  Container,
-  Overlay,
-  OverlayContainer,
-  OverlayPanelLeft,
-  OverlayPanelRight,
-  Root,
-  SignInContainer,
-  SignInFormStyled,
-  SignUpContainer,
-  SignUpFormStyled,
-} from "./styles/index-styles";
-
-const AuthForm = ({ onSignUp, onSignIn, serverError, loading }) => {
+const AuthForm = ({
+  onSignUp,
+  onSignIn,
+  serverError,
+  loading = false,
+  validationSchema,
+  initalValues,
+}) => {
   const [signUpActive, setsignUp] = useState(false);
   const toggleSignPanel = () => {
     setsignUp((prevSignUp) => !prevSignUp);
   };
 
   return (
-    <Root>
-      <Container>
-        {signUpActive ? (
-          <SignUpContainer signUpActive={signUpActive}>
-            <SignUpFormStyled
-              onSignUp={onSignUp}
-              serverError={serverError}
-              loading={loading}
-            />
-          </SignUpContainer>
-        ) : (
-          <SignInContainer signUpActive={signUpActive}>
-            <SignInFormStyled
-              onSignIn={onSignIn}
-              serverError={serverError}
-              loading={loading}
-            />
-          </SignInContainer>
-        )}
+    <div className='wrapper'>
+      <div className='container'>
+        <div
+          className={`form-container --signup ${
+            !signUpActive ? "--signup-inactive" : ""
+          }`}>
+          <SignUpForm
+            className={"form"}
+            onSignUp={onSignUp}
+            serverError={serverError}
+            loading={loading}
+            validationSchema={validationSchema}
+            initalValues={initalValues}
+          />
+        </div>
+        <div
+          className={`form-container --signin ${
+            signUpActive ? "--signin-inactive" : ""
+          }`}>
+          <SignInForm
+            className={"form"}
+            onSignIn={onSignIn}
+            serverError={serverError}
+            loading={loading}
+            validationSchema={validationSchema}
+            initalValues={initalValues}
+          />
+        </div>
 
-        <OverlayContainer signUpActive={signUpActive}>
-          <Overlay signUpActive={signUpActive}>
+        <div className={`overlay-container ${signUpActive ? "--signup-active" : ""}`}>
+          <div className={`overlay ${signUpActive ? "--signup-active" : ""}`}>
             {signUpActive ? (
-              <OverlayPanelLeft signUpActive={signUpActive}>
-                <Typography fontWeight={550} variant="h4" color="white">
-                  Register now!
-                </Typography>
-                <Typography variant="body" color="white">
-                  Enter your personal details
-                </Typography>
-                <Button
-                  onClick={toggleSignPanel}
-                  variant="transparent"
-                  marginTop="1.17rem"
-                >
+              <div className='overlay-panel --left --signup-active'>
+                <p className='typography --h4 --white'>Register now!</p>
+                <p className='typography --body --white'>Enter your personal details</p>
+                <button className='button --transparent' onClick={toggleSignPanel}>
                   Sign In
-                </Button>
-              </OverlayPanelLeft>
+                </button>
+              </div>
             ) : (
-              <OverlayPanelRight signUpActive={signUpActive}>
-                <Typography fontWeight={550} variant="h4" color="white">
-                  Welcome Back!
-                </Typography>
-                <Typography variant="body" color="white">
+              <div className='overlay-panel --right'>
+                <p className='typography --h4 --white'>Welcome Back!</p>
+                <p className='typography --body --white'>
                   Please login with your personal info
-                </Typography>
-                <Button
-                  onClick={toggleSignPanel}
-                  variant="transparent"
-                  marginTop="1.17rem"
-                >
+                </p>
+                <button className='button --transparent' onClick={toggleSignPanel}>
                   Sign Up
-                </Button>
-              </OverlayPanelRight>
+                </button>
+              </div>
             )}
-          </Overlay>
-        </OverlayContainer>
-      </Container>
-    </Root>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

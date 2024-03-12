@@ -1,13 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import {
-  Default,
-  Primary,
-  Secondary,
-  Transparent,
-} from "../styles/Button-styles";
-
 const Button = ({ variant = "default", ...props }) => {
   const variants = {
     primary: Primary,

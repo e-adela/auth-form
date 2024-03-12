@@ -11,21 +11,38 @@ npm i auth-form-react
 ## How to use
 
 ```javascript
-import React from "react";
-import Form from "auth-form-react";
+import AuthForm from "auth-form-react";
+import * as yup from "yup"; //if you wish to provide your own auth schema
 
-function App(props) {
-  const onLogin = (values) => {
-    // dispatch form values to an API
-  };
-  const onRegister = (values) => {
-    // dispatch form values to an API
-  };
-  return <Form onSignIn={onLogin} onSignUp={onRegister} loading={false} />;
+function App() {
+  const onLogin = (values) => {// dispatch form values to an API here};
+  const onRegister = (values) => {// dispatch form values to an API here};
+  return (
+    <AuthForm
+      onSignIn={onLogin}
+      onSignUp={onRegister}
+      validationSchema={yup.object({
+        username: yup
+          .string()
+          .max(15, "Must be 15 characters or less")
+          .required("Please provide a username"),
+        email: yup
+          .string()
+          .email("Invalid email address")
+          .required("Please provide an email"),
+        password: yup
+          .string()
+          .max(9, "Must be 9 characters or less")
+          .required("Please provide a password"),
+      })}
+      initalValues={{
+        username: "",
+        email: "",
+        password: "",
+      }}
+    />
+  );
 }
-
-// serverError is a string to be shown if there is an error on the server.
-// loading is a boolean for waiing for the fetch request.
 
 export default App;
 ```

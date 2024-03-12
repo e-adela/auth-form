@@ -2,22 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useField } from "formik";
 
-import {
-  FormControl,
-  FormError,
-  StyledInput,
-  StyledInputContainer,
-} from "../styles/FormInput-styles";
-
 const FormInput = ({ ...props }) => {
   const [field, meta] = useField(props);
   return (
-    <FormControl className={meta.touched && meta.error}>
-      <StyledInputContainer>
-        <StyledInput {...field} {...props} />
-      </StyledInputContainer>
-      {meta.touched && meta.error ? <FormError>{meta.error}</FormError> : null}
-    </FormControl>
+    <div className={`form-control ${meta.touched && meta.error}`}>
+      <div className='input-container'>
+        <input className='input' {...field} {...props} />
+      </div>
+      {meta.touched && meta.error ? <div className='form-error'>{meta.error}</div> : null}
+    </div>
   );
 };
 

@@ -42,21 +42,21 @@ function SignUpForm({
           <p className='typography --h4'>Create Account</p>
 
           <FormInput
-            id='username'
+            id='signup-username'
             name='username'
             type='text'
             placeholder='Username'
             autoComplete='username'
           />
           <FormInput
-            id='email'
+            id='signup-email'
             name='email'
             type='email'
             placeholder='Email'
             autoComplete='username'
           />
           <FormInput
-            id='password'
+            id='signup-password'
             name='password'
             type='password'
             placeholder='Password'

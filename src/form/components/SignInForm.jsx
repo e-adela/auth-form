@@ -40,14 +40,14 @@ function SignInForm({
           <p className='typography --h4'>Sign in</p>
 
           <FormInput
-            id='username'
+            id='signin-username'
             name='username'
             type='text'
             placeholder='Username'
             autoComplete='username'
           />
           <FormInput
-            id='password'
+            id='signin-password'
             name='password'
             type='password'
             placeholder='Password'

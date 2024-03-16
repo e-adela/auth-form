@@ -1,3 +1,4 @@
+import "./index.css";
 import cr, { useState as kr } from "react";
 import { useField as Dr, Formik as fr, Form as lr } from "formik";
 import * as se from "yup";
@@ -1336,7 +1337,7 @@ function Gr({
         /* @__PURE__ */ x.jsx(
           ye,
           {
-            id: "username",
+            id: "signin-username",
             name: "username",
             type: "text",
             placeholder: "Username",
@@ -1346,7 +1347,7 @@ function Gr({
         /* @__PURE__ */ x.jsx(
           ye,
           {
-            id: "password",
+            id: "signin-password",
             name: "password",
             type: "password",
             placeholder: "Password",
@@ -1396,7 +1397,7 @@ function Hr({
         /* @__PURE__ */ x.jsx(
           ye,
           {
-            id: "username",
+            id: "signup-username",
             name: "username",
             type: "text",
             placeholder: "Username",
@@ -1406,7 +1407,7 @@ function Hr({
         /* @__PURE__ */ x.jsx(
           ye,
           {
-            id: "email",
+            id: "signup-email",
             name: "email",
             type: "email",
             placeholder: "Email",
@@ -1416,7 +1417,7 @@ function Hr({
         /* @__PURE__ */ x.jsx(
           ye,
           {
-            id: "password",
+            id: "signup-password",
             name: "password",
             type: "password",
             placeholder: "Password",
@@ -1437,7 +1438,7 @@ function Hr({
     }
   );
 }
-const Zr = ({
+const Qr = ({
   onSignUp: o,
   onSignIn: I,
   serverError: v,
@@ -1495,5 +1496,5 @@ const Zr = ({
   ] }) });
 };
 export {
-  Zr as AuthForm
+  Qr as AuthForm
 };

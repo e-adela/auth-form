@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SignInForm from "./components/SignInForm";
 import SignUpForm from "./components/SignUpForm";
+import "./styles/main.scss";
 
 const AuthForm = ({
   onSignUp,

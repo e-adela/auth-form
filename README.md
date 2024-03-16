@@ -1,15 +1,15 @@
 # auth-form
-
 a login/signup react component form, integrated with formik & yup for client-side authentication.
 
 ## Setup
-
 ```
 npm i auth-form-react
 ```
 
-## How to use
+## Live
+[Check it out here](https://auth-form.emad-abdelmaksoud.com)
 
+## How to use
 ```javascript
 import AuthForm from "auth-form-react";
 import * as yup from "yup"; //if you wish to provide your own auth schema

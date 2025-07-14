@@ -6,9 +6,9 @@ $color-grey: #eeeeee;
 $color-greyLight: #f6f5f7;
 $color-white: #ffffff;
 
-@import 'src/form/styles/button.scss';
-@import 'src/form/styles/form.scss';
-@import 'src/form/styles/typography.scss';
+@import './a-button.scss';
+@import './a-form.scss';
+@import './a-typography.scss';
 
 .wrapper {
 	background: $color-greyLight;

@@ -7,7 +7,7 @@ npm i auth-form-react
 ```
 
 ## Live
-[Check it out here](https://auth-form.emad-abdelmaksoud.com)
+check it live [here](https://auth-form.eabdelmaksoud.me)
 
 ## How to use
 ```javascript
